@@ -1,6 +1,6 @@
-package citas;
+package cite;
 
-public class Citas {
+public class cites {
     public static void main(String[] args) {
 
     }
