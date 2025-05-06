@@ -19,7 +19,7 @@ public class Medical_cite_system {
     public static void main(String[] args) {
         MainView mainView = new MainView();
         MainController _ = new MainController(mainView);
-        //holaaaaaaaaaaaaaaaaaaaaa
+        
     }
     
 }

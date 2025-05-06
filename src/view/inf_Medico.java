@@ -48,11 +48,11 @@ public class inf_Medico extends javax.swing.JFrame {
         EDAD1 = new javax.swing.JLabel();
         edad1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("INFORMACION DEL MEDICO");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        PanelDeOpciones.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        PanelDeOpciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         BT_Guardar.setText("Guardar");
         BT_Guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +144,7 @@ public class inf_Medico extends javax.swing.JFrame {
 
         edad.setToolTipText("123456789");
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tabla_inf_medico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
