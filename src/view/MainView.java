@@ -31,7 +31,7 @@ public class MainView extends javax.swing.JFrame {
         OP_Paciente = new javax.swing.JMenuItem();
         OP_Medico = new javax.swing.JMenuItem();
         OP_Recepcionista = new javax.swing.JMenuItem();
-        OP_Reservas = new javax.swing.JMenu();
+        OP_Cita = new javax.swing.JMenu();
         OP_Citas = new javax.swing.JMenuItem();
         OP_Informe = new javax.swing.JMenu();
         Consultar_historial_del_paciente = new javax.swing.JMenuItem();
@@ -65,10 +65,10 @@ public class MainView extends javax.swing.JFrame {
 
         jMenuBar1.add(OP_Datos);
 
-        OP_Reservas.setText("Reservas");
-        OP_Reservas.addActionListener(new java.awt.event.ActionListener() {
+        OP_Cita.setText("Citas");
+        OP_Cita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OP_ReservasActionPerformed(evt);
+                OP_CitaActionPerformed(evt);
             }
         });
 
@@ -79,9 +79,9 @@ public class MainView extends javax.swing.JFrame {
                 OP_CitasActionPerformed(evt);
             }
         });
-        OP_Reservas.add(OP_Citas);
+        OP_Cita.add(OP_Citas);
 
-        jMenuBar1.add(OP_Reservas);
+        jMenuBar1.add(OP_Cita);
 
         OP_Informe.setText("Informe");
 
@@ -131,10 +131,6 @@ public class MainView extends javax.swing.JFrame {
         setBounds(0, 0, 570, 228);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void OP_ReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_ReservasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OP_ReservasActionPerformed
-
     private void OP_MedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_MedicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OP_MedicoActionPerformed
@@ -147,10 +143,6 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Consultar_historial_del_pacienteActionPerformed
 
-    private void OP_CitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_CitasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OP_CitasActionPerformed
-
     private void OP_ConCitas_todosLosPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_ConCitas_todosLosPacientesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OP_ConCitas_todosLosPacientesActionPerformed
@@ -158,6 +150,14 @@ public class MainView extends javax.swing.JFrame {
     private void OP_ConCitas_PorMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_ConCitas_PorMedicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OP_ConCitas_PorMedicoActionPerformed
+
+    private void OP_CitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_CitaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OP_CitaActionPerformed
+
+    private void OP_CitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_CitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OP_CitasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +196,7 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem Consultar_historial_del_paciente;
+    private javax.swing.JMenu OP_Cita;
     public javax.swing.JMenuItem OP_Citas;
     public javax.swing.JMenuItem OP_ConCitas_PorMedico;
     public javax.swing.JMenuItem OP_ConCitas_todosLosPacientes;
@@ -205,7 +206,6 @@ public class MainView extends javax.swing.JFrame {
     public javax.swing.JMenuItem OP_Medico;
     public javax.swing.JMenuItem OP_Paciente;
     public javax.swing.JMenuItem OP_Recepcionista;
-    public javax.swing.JMenu OP_Reservas;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

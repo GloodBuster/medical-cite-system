@@ -6,7 +6,10 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import view.AllCitesView;
+import view.CiteView;
 import view.MainView;
+import view.PatientHistoryView;
 import view.inf_Medico;
 import view.inf_Patient;
 import view.inf_Receptionist;
@@ -26,6 +29,9 @@ public class MainController implements ActionListener{
         this.view.OP_Paciente.addActionListener(this);
         this.view.OP_Medico.addActionListener(this);
         this.view.OP_Recepcionista.addActionListener(this);
+        this.view.OP_Citas.addActionListener(this);
+        this.view.Consultar_historial_del_paciente.addActionListener(this);
+        this.view.OP_ConCitas_todosLosPacientes.addActionListener(this);
     }
         //aca se ingresa el codigo para generar las acciones 
     @Override
@@ -39,6 +45,12 @@ public class MainController implements ActionListener{
             ControllerMedico ControllerMedico = new ControllerMedico(new inf_Medico());
         }else if(ae.getSource().equals(this.view.OP_Recepcionista)){
             ControllerReceptionist ControllerReceptionist = new ControllerReceptionist(new inf_Receptionist());
+        }else if(ae.getSource().equals(this.view.OP_Citas)){
+            ControllerCite _ = new ControllerCite(new CiteView());
+        }else if(ae.getSource().equals(this.view.Consultar_historial_del_paciente)){
+            PatientHistoryController _ = new PatientHistoryController(new PatientHistoryView());
+        }else if(ae.getSource().equals(this.view.OP_ConCitas_todosLosPacientes)){
+            AllCitesController _ = new AllCitesController(new AllCitesView());
         }
             
     }
