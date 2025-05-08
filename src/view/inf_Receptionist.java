@@ -34,7 +34,7 @@ public class inf_Receptionist extends javax.swing.JFrame {
         NombreRecepcionista = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         apellidosRecepcionista = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        idRecepcionista = new javax.swing.JTextField();
         Dia = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         Mes = new javax.swing.JTextField();
@@ -74,10 +74,10 @@ public class inf_Receptionist extends javax.swing.JFrame {
             }
         });
 
-        jTextField3.setToolTipText("1002480406");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        idRecepcionista.setToolTipText("1002480406");
+        idRecepcionista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                idRecepcionistaActionPerformed(evt);
             }
         });
 
@@ -170,7 +170,7 @@ public class inf_Receptionist extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(NombreRecepcionista)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
+                            .addComponent(idRecepcionista, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -214,7 +214,7 @@ public class inf_Receptionist extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(idRecepcionista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
                         .addComponent(Dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,9 +240,9 @@ public class inf_Receptionist extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_apellidosRecepcionistaActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void idRecepcionistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idRecepcionistaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_idRecepcionistaActionPerformed
 
     private void DiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaActionPerformed
         // TODO add your handling code here:
@@ -302,6 +302,7 @@ public class inf_Receptionist extends javax.swing.JFrame {
     public javax.swing.JTextField NombreRecepcionista;
     public javax.swing.JTable Tabla_Info_Recepcionista;
     public javax.swing.JTextField apellidosRecepcionista;
+    public javax.swing.JTextField idRecepcionista;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -310,6 +311,5 @@ public class inf_Receptionist extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

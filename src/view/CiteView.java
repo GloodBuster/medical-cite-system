@@ -369,6 +369,6 @@ public class CiteView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel motivo;
-    private javax.swing.JTextArea motivoField;
+    public javax.swing.JTextArea motivoField;
     // End of variables declaration//GEN-END:variables
 }
