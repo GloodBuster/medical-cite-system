@@ -37,7 +37,9 @@ public class MainView extends javax.swing.JFrame {
         Consultar_historial_del_paciente = new javax.swing.JMenuItem();
         OP_Consultar_Citas = new javax.swing.JMenu();
         OP_ConCitas_todosLosPacientes = new javax.swing.JMenuItem();
-        OP_ConCitas_PorMedico = new javax.swing.JMenuItem();
+        OP_Por_Medico = new javax.swing.JMenu();
+        OP_PorRangodefechas = new javax.swing.JMenuItem();
+        OP_Porfechaesoecifica = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO");
@@ -103,13 +105,25 @@ public class MainView extends javax.swing.JFrame {
         });
         OP_Consultar_Citas.add(OP_ConCitas_todosLosPacientes);
 
-        OP_ConCitas_PorMedico.setText("Por medico");
-        OP_ConCitas_PorMedico.addActionListener(new java.awt.event.ActionListener() {
+        OP_Por_Medico.setText("Por Medico");
+
+        OP_PorRangodefechas.setText("Por Rango de Fechas");
+        OP_PorRangodefechas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OP_ConCitas_PorMedicoActionPerformed(evt);
+                OP_PorRangodefechasActionPerformed(evt);
             }
         });
-        OP_Consultar_Citas.add(OP_ConCitas_PorMedico);
+        OP_Por_Medico.add(OP_PorRangodefechas);
+
+        OP_Porfechaesoecifica.setText("Por Fecha Especifica");
+        OP_Porfechaesoecifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OP_PorfechaesoecificaActionPerformed(evt);
+            }
+        });
+        OP_Por_Medico.add(OP_Porfechaesoecifica);
+
+        OP_Consultar_Citas.add(OP_Por_Medico);
 
         OP_Informe.add(OP_Consultar_Citas);
 
@@ -155,9 +169,13 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_OP_ConCitas_todosLosPacientesActionPerformed
 
-    private void OP_ConCitas_PorMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_ConCitas_PorMedicoActionPerformed
+    private void OP_PorfechaesoecificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_PorfechaesoecificaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_OP_ConCitas_PorMedicoActionPerformed
+    }//GEN-LAST:event_OP_PorfechaesoecificaActionPerformed
+
+    private void OP_PorRangodefechasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_PorRangodefechasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OP_PorRangodefechasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,13 +215,15 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem Consultar_historial_del_paciente;
     public javax.swing.JMenuItem OP_Citas;
-    public javax.swing.JMenuItem OP_ConCitas_PorMedico;
     public javax.swing.JMenuItem OP_ConCitas_todosLosPacientes;
     public javax.swing.JMenu OP_Consultar_Citas;
     private javax.swing.JMenu OP_Datos;
     private javax.swing.JMenu OP_Informe;
     public javax.swing.JMenuItem OP_Medico;
     public javax.swing.JMenuItem OP_Paciente;
+    private javax.swing.JMenuItem OP_PorRangodefechas;
+    public javax.swing.JMenu OP_Por_Medico;
+    public javax.swing.JMenuItem OP_Porfechaesoecifica;
     public javax.swing.JMenuItem OP_Recepcionista;
     public javax.swing.JMenu OP_Reservas;
     private javax.swing.JMenuBar jMenuBar1;
