@@ -2,7 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="INFORMACION DEL MEDICO"/>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="Default Cursor"/>
@@ -65,7 +65,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="EDAD1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="edad1" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
@@ -108,7 +108,7 @@
                           <Component id="EDAD" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="edad" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="EDAD1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="edad1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -142,8 +142,8 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="BT_Modificar" max="32767" attributes="0"/>
                       <Component id="BT_Buscar" alignment="0" max="32767" attributes="0"/>
-                      <Component id="BT_Guardar" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="BT_Agenda" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="BT_Guardar" alignment="0" max="32767" attributes="0"/>
+                      <Component id="BT_Agenda" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
@@ -171,10 +171,19 @@
         <Component class="javax.swing.JButton" name="BT_Guardar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Guardar"/>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[81, 23]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[81, 23]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_GuardarActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="BT_Modificar">
           <Properties>
@@ -206,6 +215,12 @@
         <Component class="javax.swing.JButton" name="BT_Agenda">
           <Properties>
             <Property name="text" type="java.lang.String" value="Agenda"/>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[81, 23]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[81, 23]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_AgendaActionPerformed"/>
@@ -245,7 +260,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="NombreMedico">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="123456789"/>
+        <Property name="toolTipText" type="java.lang.String" value="Jose"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -261,7 +276,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="pApellido_Medico">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="123456789"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ramirez"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pApellido_MedicoActionPerformed"/>
@@ -280,7 +295,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="sApellido_Medico">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="123456789"/>
+        <Property name="toolTipText" type="java.lang.String" value="Herrera"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -296,7 +311,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="edad">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="123456789"/>
+        <Property name="toolTipText" type="java.lang.String" value="3103295620"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -399,12 +414,56 @@
         <Property name="text" type="java.lang.String" value="Especialidad"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="edad1">
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="123456789"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="37">
+            <StringItem index="0" value="Alergolog&#xed;a"/>
+            <StringItem index="1" value="Algolog&#xed;a"/>
+            <StringItem index="2" value="Anestesiolog&#xed;a"/>
+            <StringItem index="3" value="Angiolog&#xed;a"/>
+            <StringItem index="4" value="Cardiolog&#xed;a"/>
+            <StringItem index="5" value="Endocrinolog&#xed;a"/>
+            <StringItem index="6" value="Estomatolog&#xed;a"/>
+            <StringItem index="7" value="Farmacolog&#xed;a Cl&#xed;nica"/>
+            <StringItem index="8" value="Foniatr&#xed;a"/>
+            <StringItem index="9" value="Gastroenterolog&#xed;a"/>
+            <StringItem index="10" value="Gen&#xe9;tica"/>
+            <StringItem index="11" value="Geriatr&#xed;a"/>
+            <StringItem index="12" value="Hematolog&#xed;a"/>
+            <StringItem index="13" value="Hepatolog&#xed;a"/>
+            <StringItem index="14" value="Infectolog&#xed;a"/>
+            <StringItem index="15" value="Inmunolog&#xed;a"/>
+            <StringItem index="16" value="Medicina aeroespacial"/>
+            <StringItem index="17" value="Medicina del deporte"/>
+            <StringItem index="18" value="Medicina familiar y comunitaria"/>
+            <StringItem index="19" value="Medicina f&#xed;sica y rehabilitaci&#xf3;n"/>
+            <StringItem index="20" value="Medicina forense"/>
+            <StringItem index="21" value="Medicina intensiva"/>
+            <StringItem index="22" value="Medicina interna"/>
+            <StringItem index="23" value="Medicina nuclear"/>
+            <StringItem index="24" value="Medicina paliativa"/>
+            <StringItem index="25" value="Medicina preventiva y salud p&#xfa;blica"/>
+            <StringItem index="26" value="Medicina del trabajo"/>
+            <StringItem index="27" value="Nefrolog&#xed;a"/>
+            <StringItem index="28" value="Neumolog&#xed;a"/>
+            <StringItem index="29" value="Neurolog&#xed;a"/>
+            <StringItem index="30" value="Nutriolog&#xed;a"/>
+            <StringItem index="31" value="Oncolog&#xed;a m&#xe9;dica"/>
+            <StringItem index="32" value="Oncolog&#xed;a radioter&#xe1;pica"/>
+            <StringItem index="33" value="Pediatr&#xed;a"/>
+            <StringItem index="34" value="Psiquiatr&#xed;a"/>
+            <StringItem index="35" value="Reumatolog&#xed;a"/>
+            <StringItem index="36" value="Toxicolog&#xed;a"/>
+          </StringArray>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+      </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
   </SubComponents>

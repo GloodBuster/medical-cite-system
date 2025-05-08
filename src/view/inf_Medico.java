@@ -46,15 +46,17 @@ public class inf_Medico extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_inf_medico = new javax.swing.JTable();
         EDAD1 = new javax.swing.JLabel();
-        edad1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("INFORMACION DEL MEDICO");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        PanelDeOpciones.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        PanelDeOpciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         BT_Guardar.setText("Guardar");
+        BT_Guardar.setMaximumSize(new java.awt.Dimension(81, 23));
+        BT_Guardar.setMinimumSize(new java.awt.Dimension(81, 23));
         BT_Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BT_GuardarActionPerformed(evt);
@@ -70,6 +72,8 @@ public class inf_Medico extends javax.swing.JFrame {
         jLabel6.setText("Escoja la opcion que prefiera.");
 
         BT_Agenda.setText("Agenda");
+        BT_Agenda.setMaximumSize(new java.awt.Dimension(81, 23));
+        BT_Agenda.setMinimumSize(new java.awt.Dimension(81, 23));
         BT_Agenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BT_AgendaActionPerformed(evt);
@@ -89,8 +93,8 @@ public class inf_Medico extends javax.swing.JFrame {
                 .addGroup(PanelDeOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BT_Modificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BT_Buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BT_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BT_Agenda, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BT_Guardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BT_Agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(46, 46, 46))
         );
         PanelDeOpcionesLayout.setVerticalGroup(
@@ -99,13 +103,13 @@ public class inf_Medico extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addGap(28, 28, 28)
-                .addComponent(BT_Guardar)
+                .addComponent(BT_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BT_Modificar)
                 .addGap(18, 18, 18)
                 .addComponent(BT_Buscar)
                 .addGap(18, 18, 18)
-                .addComponent(BT_Agenda)
+                .addComponent(BT_Agenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -122,12 +126,12 @@ public class inf_Medico extends javax.swing.JFrame {
         NOMBRE.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         NOMBRE.setText("Nombre:");
 
-        NombreMedico.setToolTipText("123456789");
+        NombreMedico.setToolTipText("Jose");
 
         PRIMER_APELLIDO.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         PRIMER_APELLIDO.setText("Primer apellido:");
 
-        pApellido_Medico.setToolTipText("123456789");
+        pApellido_Medico.setToolTipText("Ramirez");
         pApellido_Medico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pApellido_MedicoActionPerformed(evt);
@@ -137,14 +141,14 @@ public class inf_Medico extends javax.swing.JFrame {
         SEGUNDO_APELLIDO.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         SEGUNDO_APELLIDO.setText("Segundo apellido:");
 
-        sApellido_Medico.setToolTipText("123456789");
+        sApellido_Medico.setToolTipText("Herrera");
 
         EDAD.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         EDAD.setText("Telefono:");
 
-        edad.setToolTipText("123456789");
+        edad.setToolTipText("3103295620");
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tabla_inf_medico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -187,7 +191,13 @@ public class inf_Medico extends javax.swing.JFrame {
         EDAD1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         EDAD1.setText("Especialidad");
 
-        edad1.setToolTipText("123456789");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alergología", "Algología", "Anestesiología", "Angiología", "Cardiología", "Endocrinología", "Estomatología", "Farmacología Clínica", "Foniatría", "Gastroenterología", "Genética", "Geriatría", "Hematología", "Hepatología", "Infectología", "Inmunología", "Medicina aeroespacial", "Medicina del deporte", "Medicina familiar y comunitaria", "Medicina física y rehabilitación", "Medicina forense", "Medicina intensiva", "Medicina interna", "Medicina nuclear", "Medicina paliativa", "Medicina preventiva y salud pública", "Medicina del trabajo", "Nefrología", "Neumología", "Neurología", "Nutriología", "Oncología médica", "Oncología radioterápica", "Pediatría", "Psiquiatría", "Reumatología", "Toxicología" }));
+        jComboBox1.setToolTipText("");
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,7 +234,7 @@ public class inf_Medico extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(EDAD1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(edad1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(43, 43, 43))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -257,7 +267,7 @@ public class inf_Medico extends javax.swing.JFrame {
                             .addComponent(EDAD)
                             .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(EDAD1)
-                            .addComponent(edad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -281,6 +291,10 @@ public class inf_Medico extends javax.swing.JFrame {
     private void BT_AgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_AgendaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BT_AgendaActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,7 +335,7 @@ public class inf_Medico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BT_Agenda;
     public javax.swing.JButton BT_Buscar;
-    private javax.swing.JButton BT_Guardar;
+    public javax.swing.JButton BT_Guardar;
     public javax.swing.JButton BT_Modificar;
     private javax.swing.JLabel EDAD;
     private javax.swing.JLabel EDAD1;
@@ -332,8 +346,8 @@ public class inf_Medico extends javax.swing.JFrame {
     private javax.swing.JPanel PanelDeOpciones;
     private javax.swing.JLabel SEGUNDO_APELLIDO;
     public javax.swing.JTextField edad;
-    public javax.swing.JTextField edad1;
     public javax.swing.JTextField idMedico;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -6,6 +6,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 import view.inf_Receptionist;
 
@@ -19,14 +20,28 @@ public class ControllerReceptionist implements ActionListener{
     
     public ControllerReceptionist(inf_Receptionist view){
         this.view = view;
-        
         this.view.setVisible(true);
+        
+        this.view.Bt_Guardar_Inf.addActionListener(this);
+        this.view.Bt_Modificar.addActionListener(this);
+        this.view.Bt_agendarCita.addActionListener(this);
+        this.view.Bt_Buscar.addActionListener(this);
     }
     
     
     
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent ae) {
+        //Informacion
+         if(ae.getSource().equals(this.view.Bt_Guardar_Inf)){
+            JOptionPane.showMessageDialog(null,"En construccion backend");
+        }else if(ae.getSource().equals(this.view.Bt_Modificar)){
+            JOptionPane.showMessageDialog(null,"En construccion backend");
+        }else if(ae.getSource().equals(this.view.Bt_agendarCita)){
+            JOptionPane.showMessageDialog(null,"En construccion backend");
+        }else if(ae.getSource().equals(this.view.Bt_Buscar)){
+            JOptionPane.showMessageDialog(null,"En construccion backend");
+        }
 
     }
     

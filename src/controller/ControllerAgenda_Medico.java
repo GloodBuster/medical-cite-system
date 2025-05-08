@@ -7,36 +7,38 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import view.inf_Patient;
+import view.Agenda_Medico;
 
 /**
  *
  * @author caes2
  */
-public class ControllerPatient implements ActionListener {
+public class ControllerAgenda_Medico implements ActionListener{
     
-    private inf_Patient view;
+    private Agenda_Medico view;
     
-    public ControllerPatient(inf_Patient view){
+    public ControllerAgenda_Medico(Agenda_Medico view){
         this.view = view;
         this.view.setVisible(true);
         
-        this.view.BT_Guardar.addActionListener(this);
-        this.view.BT_Modificar.addActionListener(this);
-        this.view.BT_Buscar.addActionListener(this);
+        
+        //botones sin ninguna accion (backend)
+        this.view.BT_guardar.addActionListener(this);
+        this.view.BT_editar.addActionListener(this);
+       
         
     }
     
+
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getSource().equals(this.view.BT_Guardar)){
+            
+        //Informacion
+         if(ae.getSource().equals(this.view.BT_guardar)){
             JOptionPane.showMessageDialog(null,"En construccion backend");
-        }else if(ae.getSource().equals(this.view.BT_Modificar)){
-            JOptionPane.showMessageDialog(null,"En construccion backend");
-        }else if(ae.getSource().equals(this.view.BT_Buscar)){
+        }else if(ae.getSource().equals(this.view.BT_editar)){
             JOptionPane.showMessageDialog(null,"En construccion backend");
         }
-        
     }
     
 }

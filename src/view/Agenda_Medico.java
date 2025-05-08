@@ -28,12 +28,12 @@ public class Agenda_Medico extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_agenda_medico = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BT_guardar = new javax.swing.JButton();
+        BT_editar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CALENDARIO LABORAL");
 
         tabla_agenda_medico.setModel(new javax.swing.table.DefaultTableModel(
@@ -49,14 +49,14 @@ public class Agenda_Medico extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabla_agenda_medico);
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BT_guardar.setText("Guardar");
+        BT_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BT_guardarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Editar");
+        BT_editar.setText("Editar");
 
         jLabel1.setText("Dias en los que puede tener citas medicas con los pacientes");
 
@@ -74,9 +74,9 @@ public class Agenda_Medico extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(140, 140, 140)
-                                .addComponent(jButton1)
+                                .addComponent(BT_guardar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
+                                .addComponent(BT_editar))
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -93,17 +93,17 @@ public class Agenda_Medico extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(BT_guardar)
+                    .addComponent(BT_editar))
                 .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BT_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_guardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BT_guardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,8 +141,8 @@ public class Agenda_Medico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton BT_editar;
+    public javax.swing.JButton BT_guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
