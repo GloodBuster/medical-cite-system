@@ -34,9 +34,8 @@ public class Infmedicorangofecha extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ListMedporRango = new javax.swing.JList<>();
         Titulo = new javax.swing.JLabel();
-        infmedcerrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         infmedbutOk.setText("Ok");
 
@@ -57,8 +56,6 @@ public class Infmedicorangofecha extends javax.swing.JFrame {
 
         Titulo.setText("POR RANGO DE FECHAS");
         Titulo.setOpaque(true);
-
-        infmedcerrar.setText("Cerrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,10 +81,6 @@ public class Infmedicorangofecha extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Titulo)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(infmedcerrar)
-                .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,9 +97,7 @@ public class Infmedicorangofecha extends javax.swing.JFrame {
                     .addComponent(Medtextfechfin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(infmedcerrar)
-                .addContainerGap())
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,7 +150,6 @@ public class Infmedicorangofecha extends javax.swing.JFrame {
     public java.awt.TextField Medtextfechfin;
     public javax.swing.JLabel Titulo;
     public javax.swing.JButton infmedbutOk;
-    public javax.swing.JButton infmedcerrar;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

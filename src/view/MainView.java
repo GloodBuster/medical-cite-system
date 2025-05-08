@@ -221,7 +221,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenu OP_Informe;
     public javax.swing.JMenuItem OP_Medico;
     public javax.swing.JMenuItem OP_Paciente;
-    private javax.swing.JMenuItem OP_PorRangodefechas;
+    public javax.swing.JMenuItem OP_PorRangodefechas;
     public javax.swing.JMenu OP_Por_Medico;
     public javax.swing.JMenuItem OP_Porfechaesoecifica;
     public javax.swing.JMenuItem OP_Recepcionista;

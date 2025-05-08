@@ -32,9 +32,8 @@ public class infmedicofechaesp extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ListMedporesp = new javax.swing.JList<>();
         infmedicofechesoTitulo = new javax.swing.JLabel();
-        infmedespcerrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         infmedfechbutOk.setText("Ok");
 
@@ -51,8 +50,6 @@ public class infmedicofechaesp extends javax.swing.JFrame {
 
         infmedicofechesoTitulo.setText("FECHA ESPECIFICA");
         infmedicofechesoTitulo.setOpaque(true);
-
-        infmedespcerrar.setText("Cerrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,10 +70,6 @@ public class infmedicofechaesp extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(infmedicofechesoTitulo)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(infmedespcerrar)
-                .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,9 +83,7 @@ public class infmedicofechaesp extends javax.swing.JFrame {
                         .addComponent(MedTextFechesp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addComponent(infmedespcerrar)
-                        .addContainerGap())
+                        .addContainerGap(38, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(infmedfechbutOk)
@@ -145,7 +136,6 @@ public class infmedicofechaesp extends javax.swing.JFrame {
     public javax.swing.JList<String> ListMedporesp;
     public java.awt.TextField MedTextFechesp;
     public java.awt.Label Medicofechainicio;
-    public javax.swing.JButton infmedespcerrar;
     public javax.swing.JButton infmedfechbutOk;
     public javax.swing.JLabel infmedicofechesoTitulo;
     private javax.swing.JScrollPane jScrollPane1;

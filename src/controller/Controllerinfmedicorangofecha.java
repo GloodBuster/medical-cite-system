@@ -6,28 +6,31 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.infmedicorangofecha;
+import javax.swing.JOptionPane;
+import view.Infmedicorangofecha;
 
 /**
  *
  * @author macse
  */
 public class Controllerinfmedicorangofecha implements ActionListener {
-    private infmedicorangofecha view;
+    private Infmedicorangofecha view;
     
     /**
      *
      * @param view
      */
-    public Controllerinfmedicorangofecha(infmedicorangofecha view){
+    public Controllerinfmedicorangofecha(Infmedicorangofecha view){
         this.view = view;
-        
+        this.view.infmedbutOk.addActionListener(this);
         this.view.setVisible(true);
     
 }
   @Override
-    public void actionPerformed(ActionEvent e) {
-
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource().equals(this.view.infmedbutOk)){
+            JOptionPane.showMessageDialog(null,"En construccion backend");
+        }
     }
     
 }

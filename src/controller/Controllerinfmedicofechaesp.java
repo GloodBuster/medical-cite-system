@@ -6,6 +6,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import view.infmedicofechaesp;
 
 /**
@@ -17,13 +18,15 @@ public class Controllerinfmedicofechaesp implements ActionListener {
     
     public Controllerinfmedicofechaesp(infmedicofechaesp view){
         this.view = view;
-        
+        this.view.infmedfechbutOk.addActionListener(this);
         this.view.setVisible(true);
     
 }
   @Override
-    public void actionPerformed(ActionEvent e) {
-
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource().equals(this.view.infmedfechbutOk)){
+            JOptionPane.showMessageDialog(null,"En construccion backend");
+        }
     }
     
 }

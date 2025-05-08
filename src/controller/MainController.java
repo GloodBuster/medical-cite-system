@@ -6,10 +6,12 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import view.Infmedicorangofecha;
 import view.MainView;
 import view.inf_Medico;
 import view.inf_Patient;
 import view.inf_Receptionist;
+import view.infmedicofechaesp;
 
 /**
  *
@@ -26,6 +28,8 @@ public class MainController implements ActionListener{
         this.view.OP_Paciente.addActionListener(this);
         this.view.OP_Medico.addActionListener(this);
         this.view.OP_Recepcionista.addActionListener(this);
+        this.view.OP_PorRangodefechas.addActionListener(this);
+        this.view.OP_Porfechaesoecifica.addActionListener(this);
     }
         //aca se ingresa el codigo para generar las acciones 
     @Override
@@ -39,6 +43,10 @@ public class MainController implements ActionListener{
             ControllerMedico ControllerMedico = new ControllerMedico(new inf_Medico());
         }else if(ae.getSource().equals(this.view.OP_Recepcionista)){
             ControllerReceptionist ControllerReceptionist = new ControllerReceptionist(new inf_Receptionist());
+        }else if(ae.getSource().equals(this.view.OP_PorRangodefechas)){
+            Controllerinfmedicorangofecha _ = new Controllerinfmedicorangofecha(new Infmedicorangofecha());
+        }else if(ae.getSource().equals(this.view.OP_Porfechaesoecifica)){
+            Controllerinfmedicofechaesp _ = new Controllerinfmedicofechaesp(new infmedicofechaesp());
         }
             
     }
