@@ -8,11 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.AllCitesView;
 import view.CiteView;
+import view.Infmedicorangofecha;
 import view.MainView;
 import view.PatientHistoryView;
 import view.inf_Medico;
 import view.inf_Patient;
 import view.inf_Receptionist;
+import view.infmedicofechaesp;
 
 /**
  *
@@ -32,6 +34,8 @@ public class MainController implements ActionListener{
         this.view.OP_Citas.addActionListener(this);
         this.view.Consultar_historial_del_paciente.addActionListener(this);
         this.view.OP_ConCitas_todosLosPacientes.addActionListener(this);
+        this.view.OP_PorRangodefechas.addActionListener(this);
+        this.view.OP_Porfechaesoecifica.addActionListener(this);
     }
         //aca se ingresa el codigo para generar las acciones 
     @Override
@@ -51,6 +55,10 @@ public class MainController implements ActionListener{
             PatientHistoryController _ = new PatientHistoryController(new PatientHistoryView());
         }else if(ae.getSource().equals(this.view.OP_ConCitas_todosLosPacientes)){
             AllCitesController _ = new AllCitesController(new AllCitesView());
+        }else if(ae.getSource().equals(this.view.OP_PorRangodefechas)){
+            Controllerinfmedicorangofecha _ = new Controllerinfmedicorangofecha(new Infmedicorangofecha());
+        }else if(ae.getSource().equals(this.view.OP_Porfechaesoecifica)){
+            Controllerinfmedicofechaesp _ = new Controllerinfmedicofechaesp(new infmedicofechaesp());
         }
             
     }
