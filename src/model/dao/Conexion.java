@@ -18,9 +18,6 @@ public class Conexion {
         PASSWORD = config.getPassword();
         try {
             Class.forName("org.postgresql.Driver");
-            System.out.println(URL);
-            System.out.println(USER);
-            System.out.println(PASSWORD);
             conectar = DriverManager.getConnection(URL, USER, PASSWORD);
 
         } catch (ClassNotFoundException | SQLException e) {
