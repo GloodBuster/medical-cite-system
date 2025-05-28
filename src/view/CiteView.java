@@ -30,27 +30,31 @@ public class CiteView extends javax.swing.JFrame {
         BT_Guardar = new javax.swing.JButton();
         BT_Modificar = new javax.swing.JButton();
         BT_Buscar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        idMedico = new javax.swing.JLabel();
-        idCita = new javax.swing.JLabel();
-        idMedicoField = new javax.swing.JTextField();
-        idPacienteField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         motivo = new javax.swing.JLabel();
-        idRecepcionistaField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
+        idMedico = new javax.swing.JLabel();
+        idMedicoField = new javax.swing.JTextField();
+        idRecepcionista = new javax.swing.JLabel();
+        idRecepcionistaField = new javax.swing.JTextField();
+        idPacienteField = new javax.swing.JTextField();
+        idPaciente = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        citaInfTabla = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
+        checkPatient = new javax.swing.JButton();
+        checkDoctor = new javax.swing.JButton();
+        checkReceptionist = new javax.swing.JButton();
         fecha = new javax.swing.JLabel();
         hora = new javax.swing.JLabel();
-        idRecepcionista = new javax.swing.JLabel();
-        horaField = new javax.swing.JTextField();
-        idCitaField = new javax.swing.JTextField();
-        fechaField = new javax.swing.JTextField();
         estado = new javax.swing.JLabel();
-        estadoField = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         motivoField = new javax.swing.JTextArea();
-        idPaciente = new javax.swing.JLabel();
+        idCitaField = new javax.swing.JTextField();
+        idCita = new javax.swing.JLabel();
+        stateField = new javax.swing.JComboBox<>();
+        dateField = new javax.swing.JComboBox<>();
+        hourField = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,18 +71,14 @@ public class CiteView extends javax.swing.JFrame {
 
         BT_Buscar.setText("Buscar");
 
-        jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel6.setText("Escoja la opcion que prefiera.");
+        jLabel7.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel7.setText("Escoja la opcion que prefiera.");
 
         javax.swing.GroupLayout PanelDeOpcionesLayout = new javax.swing.GroupLayout(PanelDeOpciones);
         PanelDeOpciones.setLayout(PanelDeOpcionesLayout);
         PanelDeOpcionesLayout.setHorizontalGroup(
             PanelDeOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelDeOpcionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeOpcionesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelDeOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -86,13 +86,17 @@ public class CiteView extends javax.swing.JFrame {
                     .addComponent(BT_Modificar, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                     .addComponent(BT_Buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(46, 46, 46))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeOpcionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         PanelDeOpcionesLayout.setVerticalGroup(
             PanelDeOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeOpcionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addGap(12, 12, 12)
                 .addComponent(BT_Guardar)
                 .addGap(18, 18, 18)
                 .addComponent(BT_Modificar)
@@ -101,11 +105,14 @@ public class CiteView extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        motivo.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        motivo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        motivo.setText("Motivo de la consulta");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         idMedico.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         idMedico.setText("Id Medico");
-
-        idCita.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        idCita.setText("Id Cita");
 
         idMedicoField.setToolTipText("123456789");
         idMedicoField.addActionListener(new java.awt.event.ActionListener() {
@@ -114,36 +121,52 @@ public class CiteView extends javax.swing.JFrame {
             }
         });
 
-        idPacienteField.setToolTipText("123456789");
-
-        motivo.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        motivo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        motivo.setText("Motivo de la consulta");
+        idRecepcionista.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        idRecepcionista.setText("Id Recepcionista");
 
         idRecepcionistaField.setToolTipText("123456789");
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        idPacienteField.setToolTipText("123456789");
 
-        citaInfTabla.setModel(new javax.swing.table.DefaultTableModel(
+        idPaciente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        idPaciente.setText("Id Paciente");
+
+        jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Comprueba la existencia de los miembros de la cita");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null}
             },
             new String [] {
-                "Id Cita", "Id Paciente", "Id Médico", "Id Recepcionista", "Fecha cita", "Hora cita", "Estado", "Motivo", "Fecha asignación"
+                "ID", "Nombre", "Apellidos"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
-            };
+        ));
+        jTable1.setRowHeight(30);
+        jScrollPane1.setViewportView(jTable1);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        checkPatient.setText("Comprobar");
+        checkPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPatientActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(citaInfTabla);
+
+        checkDoctor.setText("Comprobar");
+        checkDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkDoctorActionPerformed(evt);
+            }
+        });
+
+        checkReceptionist.setText("Comprobar");
+        checkReceptionist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkReceptionistActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -151,14 +174,61 @@ public class CiteView extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(idPacienteField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(checkPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(idMedicoField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(checkDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(39, 39, 39)
+                                        .addComponent(idPaciente)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(idMedico)
+                                        .addGap(179, 179, 179)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(idRecepcionistaField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(checkReceptionist, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(idRecepcionista)
+                                        .addGap(127, 127, 127))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel6)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idMedico)
+                    .addComponent(idRecepcionista)
+                    .addComponent(idPaciente))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idPacienteField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idMedicoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idRecepcionistaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkPatient)
+                    .addComponent(checkReceptionist)
+                    .addComponent(checkDoctor))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -168,10 +238,12 @@ public class CiteView extends javax.swing.JFrame {
         hora.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         hora.setText("Hora de la cita");
 
-        idRecepcionista.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        idRecepcionista.setText("Id Recepcionista");
+        estado.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        estado.setText("Estado de la cita");
 
-        horaField.setToolTipText("123456789");
+        motivoField.setColumns(20);
+        motivoField.setRows(5);
+        jScrollPane2.setViewportView(motivoField);
 
         idCitaField.setToolTipText("123456789");
         idCitaField.addActionListener(new java.awt.event.ActionListener() {
@@ -180,117 +252,108 @@ public class CiteView extends javax.swing.JFrame {
             }
         });
 
-        fechaField.setToolTipText("123456789");
+        idCita.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        idCita.setText("Id Cita");
 
-        estado.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        estado.setText("Estado de la cita");
+        stateField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pendiente", "Finalizada", "Cancelada" }));
+        stateField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stateFieldActionPerformed(evt);
+            }
+        });
 
-        estadoField.setToolTipText("123456789");
+        dateField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione doctor" }));
+        dateField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateFieldActionPerformed(evt);
+            }
+        });
 
-        motivoField.setColumns(20);
-        motivoField.setRows(5);
-        jScrollPane2.setViewportView(motivoField);
-
-        idPaciente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        idPaciente.setText("Id Paciente");
+        hourField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione doctor" }));
+        hourField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hourFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(fecha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(fechaField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(idCita)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(idCitaField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(idMedico)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(idMedicoField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(estado)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(estadoField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(34, 34, 34)
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idRecepcionistaField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(idPaciente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(idPacienteField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idCitaField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(61, 61, 61))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(56, 56, 56)
+                                        .addComponent(fecha))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(81, 81, 81)
+                                        .addComponent(idCita)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(hora)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(horaField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(estado)
+                                .addGap(78, 78, 78))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hourField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(stateField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(hora)))
+                                .addGap(53, 53, 53)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(idRecepcionista)
-                                .addGap(152, 152, 152)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(motivo, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 12, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                                .addComponent(motivo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)))
                         .addComponent(PanelDeOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(13, Short.MAX_VALUE)
-                        .addComponent(motivo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelDeOpciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(motivo)
+                            .addComponent(fecha)
+                            .addComponent(hora))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PanelDeOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(idCita)
-                                    .addComponent(idCitaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(idMedico)
-                                    .addComponent(idMedicoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(fecha)
-                                    .addComponent(fechaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(hourField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(estado)
-                                    .addComponent(estadoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
+                                    .addComponent(idCita))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(idPacienteField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(idPaciente))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(idRecepcionista)
-                                    .addComponent(idRecepcionistaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(hora)
-                                    .addComponent(horaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                    .addComponent(idCitaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(stateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                        .addGap(19, 19, 19)))
                 .addContainerGap())
         );
 
@@ -308,6 +371,30 @@ public class CiteView extends javax.swing.JFrame {
     private void idCitaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCitaFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_idCitaFieldActionPerformed
+
+    private void checkPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPatientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPatientActionPerformed
+
+    private void checkDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkDoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkDoctorActionPerformed
+
+    private void checkReceptionistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkReceptionistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkReceptionistActionPerformed
+
+    private void stateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stateFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stateFieldActionPerformed
+
+    private void dateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateFieldActionPerformed
+
+    private void hourFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hourFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hourFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,13 +436,14 @@ public class CiteView extends javax.swing.JFrame {
     public javax.swing.JButton BT_Guardar;
     public javax.swing.JButton BT_Modificar;
     private javax.swing.JPanel PanelDeOpciones;
-    public javax.swing.JTable citaInfTabla;
+    public javax.swing.JButton checkDoctor;
+    public javax.swing.JButton checkPatient;
+    public javax.swing.JButton checkReceptionist;
+    public javax.swing.JComboBox<String> dateField;
     private javax.swing.JLabel estado;
-    public javax.swing.JTextField estadoField;
     private javax.swing.JLabel fecha;
-    public javax.swing.JTextField fechaField;
     private javax.swing.JLabel hora;
-    public javax.swing.JTextField horaField;
+    public javax.swing.JComboBox<String> hourField;
     private javax.swing.JLabel idCita;
     public javax.swing.JTextField idCitaField;
     private javax.swing.JLabel idMedico;
@@ -365,10 +453,13 @@ public class CiteView extends javax.swing.JFrame {
     private javax.swing.JLabel idRecepcionista;
     public javax.swing.JTextField idRecepcionistaField;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTable1;
     private javax.swing.JLabel motivo;
     public javax.swing.JTextArea motivoField;
+    public javax.swing.JComboBox<String> stateField;
     // End of variables declaration//GEN-END:variables
 }

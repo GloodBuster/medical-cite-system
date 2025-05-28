@@ -42,10 +42,7 @@ public class PatientHistoryView extends javax.swing.JFrame {
 
         citaInfTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Id Cita", "Id Paciente", "Id Médico", "Id Recepcionista", "Fecha cita", "Hora cita", "Estado", "Motivo", "Fecha asignación"
@@ -60,6 +57,9 @@ public class PatientHistoryView extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(citaInfTabla);
+        if (citaInfTabla.getColumnModel().getColumnCount() > 0) {
+            citaInfTabla.getColumnModel().getColumn(7).setPreferredWidth(150);
+        }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -67,7 +67,7 @@ public class PatientHistoryView extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -99,24 +99,24 @@ public class PatientHistoryView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(258, 258, 258)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(idPaciente)
                 .addGap(18, 18, 18)
                 .addComponent(idPacienteField, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(searchButton)
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addGap(345, 345, 345))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idPacienteField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idPaciente)
                     .addComponent(searchButton))
-                .addGap(33, 33, 33)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );

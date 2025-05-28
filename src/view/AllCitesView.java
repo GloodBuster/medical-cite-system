@@ -37,10 +37,7 @@ public class AllCitesView extends javax.swing.JFrame {
 
         citaInfTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Id Cita", "Id Paciente", "Id Médico", "Id Recepcionista", "Fecha cita", "Hora cita", "Estado", "Motivo", "Fecha asignación"
@@ -55,6 +52,9 @@ public class AllCitesView extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(citaInfTabla);
+        if (citaInfTabla.getColumnModel().getColumnCount() > 0) {
+            citaInfTabla.getColumnModel().getColumn(7).setPreferredWidth(150);
+        }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -62,7 +62,7 @@ public class AllCitesView extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 878, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 986, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -80,10 +80,10 @@ public class AllCitesView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(419, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(462, 462, 462)
                 .addComponent(idPaciente)
-                .addGap(399, 399, 399))
+                .addContainerGap(464, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
