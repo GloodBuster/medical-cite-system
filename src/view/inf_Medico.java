@@ -152,17 +152,17 @@ public class inf_Medico extends javax.swing.JFrame {
 
         tabla_inf_medico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Identificacion", "Nombre", "P. Apellido", "S. Apellido", "Especialidad"
+                "Identificacion", "Nombre", "Apellidos", "Especialidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false
+                true, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
