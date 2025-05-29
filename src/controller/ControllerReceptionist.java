@@ -24,7 +24,6 @@ public class ControllerReceptionist implements ActionListener{
         
         this.view.Bt_Guardar_Inf.addActionListener(this);
         this.view.Bt_Modificar.addActionListener(this);
-        this.view.Bt_agendarCita.addActionListener(this);
         this.view.Bt_Buscar.addActionListener(this);
     }
     
@@ -36,8 +35,6 @@ public class ControllerReceptionist implements ActionListener{
          if(ae.getSource().equals(this.view.Bt_Guardar_Inf)){
             JOptionPane.showMessageDialog(null,"En construccion backend");
         }else if(ae.getSource().equals(this.view.Bt_Modificar)){
-            JOptionPane.showMessageDialog(null,"En construccion backend");
-        }else if(ae.getSource().equals(this.view.Bt_agendarCita)){
             JOptionPane.showMessageDialog(null,"En construccion backend");
         }else if(ae.getSource().equals(this.view.Bt_Buscar)){
             JOptionPane.showMessageDialog(null,"En construccion backend");
