@@ -29,21 +29,25 @@ public class ControllerPatient implements ActionListener {
     private inf_Patient view;
     private Paciente paciente;
     private PacienteDao model;
+    private DefaultTableModel modeloTable;
     
     public ControllerPatient(inf_Patient view){
         this.view = view;
         this.view.setVisible(true);
         
         this.model = new PacienteDao();
+        modeloTable = (DefaultTableModel) this.view.tabla_Pacientes.getModel();
         
         this.view.BT_Guardar.addActionListener(this);
         this.view.BT_Buscar.addActionListener(this);
         this.view.BT_Modificar.addActionListener(this);
         this.view.BT_Eliminar.addActionListener(this);
+        this.view.BT_Ver_lista_paciente.addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
+        
         if(ae.getSource().equals(this.view.BT_Guardar)){
             paciente = new Paciente();
             
@@ -61,6 +65,7 @@ public class ControllerPatient implements ActionListener {
                 JOptionPane.showMessageDialog(null, "No se pudo registrar el paciente");
                 
             }
+                       
         }
         
             
@@ -108,7 +113,22 @@ public class ControllerPatient implements ActionListener {
 
                 }
             }
-        } 
+        }
+         
+         if(ae.getSource().equals(this.view.BT_Ver_lista_paciente)){
+           
+            List<Paciente> listaPaciente = model.readAll();
+            int filas = modeloTable.getRowCount();
+            
+            for(int i = 0; i < filas; i++ ){
+            modeloTable.removeRow(0);
+        }
+            for(Paciente paciente : listaPaciente){
+                Object[] fila= {paciente.getIdPaciente(),paciente.getNombres(),paciente.getApellidos(),paciente.getFechaNacimiento(),paciente.getTelefono(),paciente.getEmail(),paciente.getDireccion()};
+                modeloTable.addRow(fila);
+            }
+            
+        }
         
     }
     

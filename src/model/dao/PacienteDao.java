@@ -83,6 +83,31 @@ public class PacienteDao {
         return paciente;
     }
     
+    /*public boolean update(Paciente Paciente)throws SQLException{
+	boolean rowUpdate = false;
+        try{
+            String sql = "UPDATE Paciente SET nombres=?, apellidos=?, fechaNacimiento=?, telefono=?, direccion=?, email=? WHERE idPaciente=?";
+            coneccion = Conexion.conectar();
+            PreparedStatement statement = (PreparedStatement) coneccion.prepareStatement(sql);
+            
+           statement.setString(1, Paciente.getNombres());
+           statement.setString(2, Paciente.getApellidos());
+           statement.setDate(3, (Date) Paciente.getFechaNacimiento());
+           statement.setInt(4, Paciente.getTelefono());
+           statement.setString(5, Paciente.getDireccion());
+           statement.setString(6, Paciente.getEmail());
+           statement.setInt(7, Paciente.getIdPaciente());
+            
+            rowUpdate = statement.executeUpdate() > 0;
+            statement.close();
+            Conexion.cerrarConexion();
+	} catch (Exception e) {
+            System.out.println("error");
+        }
+     	return rowUpdate;
+    }*/
+    
+    
     public int update(Paciente Paciente){
        try{
            coneccion = Conexion.conectar();

@@ -29,15 +29,21 @@ public class ControllerReceptionist implements ActionListener{
     private inf_Receptionist view;
     private Recepcionista recepcionista;
     private RecepcionistaDao model;
+    private DefaultTableModel modeloTable;
     
     public ControllerReceptionist(inf_Receptionist view){
         this.view = view;
         this.view.setVisible(true);
         
+        this.model = new RecepcionistaDao();
+        modeloTable = (DefaultTableModel) this.view.Tabla_Info_Recepcionista.getModel();
+
+        
         this.view.Bt_Guardar_Inf.addActionListener(this);
         this.view.Bt_Buscar.addActionListener(this);
         this.view.Bt_Modificar.addActionListener(this);
         this.view.Bt_Eliminar.addActionListener(this);
+        this.view.Bt_Ver_lista_recepcionista.addActionListener(this);
     }
     
     
@@ -96,7 +102,22 @@ public class ControllerReceptionist implements ActionListener{
 
                 }
             }
-        } 
+        }
+         
+         if(ae.getSource().equals(this.view.Bt_Ver_lista_recepcionista)){
+           
+            List<Recepcionista> listaRecepcionista = model.readAll();
+            int filas = modeloTable.getRowCount();
+            
+            for(int i = 0; i < filas; i++ ){
+            modeloTable.removeRow(0);
+        }
+            for(Recepcionista paciente : listaRecepcionista){
+                Object[] fila= {recepcionista.getIdRecepcionista(),recepcionista.getNombres(),recepcionista.getFechaDeIngreso()};
+                modeloTable.addRow(fila);
+            }
+            
+        }
         
     }
     
