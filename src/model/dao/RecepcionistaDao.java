@@ -34,7 +34,7 @@ public class RecepcionistaDao {
        try{
            coneccion = Conexion.conectar();
            
-           PreparedStatement ps = coneccion.prepareStatement("INSERT INTO Paciente(idRecepcionista,nombres,nombres,fechaDeIngreso) VALUES(?,?,?)");
+           PreparedStatement ps = coneccion.prepareStatement("INSERT INTO Recepcionista(idRecepcionista,nombres,fechaDeIngreso) VALUES(?,?,?)");
            ps.setInt(1, Recepcionista.getIdRecepcionista());
            ps.setString(2, Recepcionista.getNombres());
            ps.setDate(3, new Date(Recepcionista.getFechaDeIngreso().getTime()));
@@ -51,7 +51,7 @@ public class RecepcionistaDao {
     public Recepcionista read(int idRecepcionista){
         try{
             coneccion = Conexion.conectar();
-            PreparedStatement ps = coneccion.prepareStatement("SELECT * FROM Paciente WHERE idPaciente =?");
+            PreparedStatement ps = coneccion.prepareStatement("SELECT * FROM Recepcionista WHERE idRecepcionista =?");
             ps.setInt(1, idRecepcionista);
             
             ResultSet resultado = ps.executeQuery();
@@ -76,13 +76,36 @@ public class RecepcionistaDao {
         return recepcionista;
     }
     
-    public int update(Recepcionista Recepcionista){
+    public boolean update(Recepcionista Recepcionista)throws SQLException{
+	boolean rowUpdate = false;
+        try{
+            String sql = "UPDATE Recepcionista SET nombres=?,  fechaDeIngreso=? WHERE idRecepcionista=?";
+            coneccion = Conexion.conectar();
+            PreparedStatement statement = (PreparedStatement) coneccion.prepareStatement(sql);
+            
+             statement.setString(1, recepcionista.getNombres());
+           statement.setDate(2, new Date( recepcionista.getFechaDeIngreso().getTime()));
+           statement.setInt(3, recepcionista.getIdRecepcionista());
+            
+            rowUpdate = statement.executeUpdate() > 0;
+            statement.close();
+            Conexion.cerrarConexion();
+	} catch (Exception e) {
+            System.out.println("error"+e.getMessage());
+        }
+     	return rowUpdate;
+    }
+    
+    
+    
+    
+   /* public int update(Recepcionista Recepcionista){
        try{
            coneccion = Conexion.conectar();
-           PreparedStatement ps = coneccion.prepareStatement("UPDATE Paciente SET nombres=?,  fechaDeIngreso=? WHERE idRecepcionista=?");
+           PreparedStatement ps = coneccion.prepareStatement("UPDATE Recepcionista SET nombres=?,  fechaDeIngreso=? WHERE idRecepcionista=?");
            
            ps.setString(1, recepcionista.getNombres());
-           ps.setDate(2, (Date) recepcionista.getFechaDeIngreso());
+           ps.setDate(2, new Date( recepcionista.getFechaDeIngreso().getTime()));
            ps.setInt(3, recepcionista.getIdRecepcionista());
                         
            return ps.executeUpdate();
@@ -91,7 +114,7 @@ public class RecepcionistaDao {
             return 0;
         }
              
-    }
+    }*/
     
    public int delete(Recepcionista Recepcionista){
        try{
@@ -110,18 +133,18 @@ public class RecepcionistaDao {
        try{
            List<Recepcionista> lista = new ArrayList<>();
            coneccion = Conexion.conectar();
-           PreparedStatement ps = coneccion.prepareStatement("SELECT * FROM Paciente");
+           PreparedStatement ps = coneccion.prepareStatement("SELECT * FROM Recepcionista");
            ResultSet resultado = ps.executeQuery();
            
-           recepcionista  =new Recepcionista();
+           
            
            while (resultado.next()) {
-               
-                recepcionista.setIdRecepcionista(resultado.getInt("idRecepcionista"));
-                recepcionista.setNombres(resultado.getString("nombres"));
-                recepcionista.setFechaDeIngreso(resultado.getDate("fechaDeIngreso"));
+                Recepcionista  rec=new Recepcionista();
+                rec.setIdRecepcionista(resultado.getInt("idRecepcionista"));
+                rec.setNombres(resultado.getString("nombres"));
+                rec.setFechaDeIngreso(resultado.getDate("fechaDeIngreso"));
               
-                lista.add(recepcionista); 
+                lista.add(rec); 
            }
            
            return lista;

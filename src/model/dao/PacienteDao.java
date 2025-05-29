@@ -83,7 +83,7 @@ public class PacienteDao {
         return paciente;
     }
     
-    /*public boolean update(Paciente Paciente)throws SQLException{
+    public boolean update(Paciente Paciente)throws SQLException{
 	boolean rowUpdate = false;
         try{
             String sql = "UPDATE Paciente SET nombres=?, apellidos=?, fechaNacimiento=?, telefono=?, direccion=?, email=? WHERE idPaciente=?";
@@ -92,7 +92,7 @@ public class PacienteDao {
             
            statement.setString(1, Paciente.getNombres());
            statement.setString(2, Paciente.getApellidos());
-           statement.setDate(3, (Date) Paciente.getFechaNacimiento());
+           statement.setDate(3,new Date( Paciente.getFechaNacimiento().getTime()));
            statement.setInt(4, Paciente.getTelefono());
            statement.setString(5, Paciente.getDireccion());
            statement.setString(6, Paciente.getEmail());
@@ -102,13 +102,13 @@ public class PacienteDao {
             statement.close();
             Conexion.cerrarConexion();
 	} catch (Exception e) {
-            System.out.println("error");
+            System.out.println("error"+e.getMessage());
         }
      	return rowUpdate;
-    }*/
+    }
     
     
-    public int update(Paciente Paciente){
+   /* public int update(Paciente Paciente){
        try{
            coneccion = Conexion.conectar();
            PreparedStatement ps = coneccion.prepareStatement("UPDATE Paciente SET nombres=?, apellidos=?, fechaNacimiento=?, telefono=?, direccion=?, email=? WHERE idPaciente=?");
@@ -129,7 +129,7 @@ public class PacienteDao {
             return 0;
         }
              
-    }
+    }*/
     
    public int delete(Paciente Paciente){
        try{
@@ -151,19 +151,19 @@ public class PacienteDao {
            PreparedStatement ps = coneccion.prepareStatement("SELECT * FROM Paciente");
            ResultSet resultado = ps.executeQuery();
            
-           paciente  =new Paciente();
+           
            
            while (resultado.next()) {
-               
-                paciente.setIdPaciente(resultado.getInt("idPaciente"));
-                paciente.setNombres(resultado.getString("nombres"));
-                paciente.setApellidos(resultado.getString("apellidos"));
-                paciente.setFechaNacimiento(resultado.getDate("fechaNacimiento"));
-                paciente.setTelefono(resultado.getInt("telefono"));
-                paciente.setDireccion(resultado.getString("direccion"));
-                paciente.setEmail(resultado.getString("email"));
+                Paciente pac = new Paciente(); 
+                pac.setIdPaciente(resultado.getInt("idPaciente"));
+                pac.setNombres(resultado.getString("nombres"));
+                pac.setApellidos(resultado.getString("apellidos"));
+                pac.setFechaNacimiento(resultado.getDate("fechaNacimiento"));
+                pac.setTelefono(resultado.getInt("telefono"));
+                pac.setDireccion(resultado.getString("direccion"));
+                pac.setEmail(resultado.getString("email"));
                 
-                lista.add(paciente); 
+                lista.add(pac); 
            }
            
            return lista;

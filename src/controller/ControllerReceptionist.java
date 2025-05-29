@@ -95,11 +95,22 @@ public class ControllerReceptionist implements ActionListener{
          if(ae.getSource().equals(this.view.Bt_Modificar)){
             int respuesta = JOptionPane.showConfirmDialog(null,"Estas seguro de modificar?","Confirmar",JOptionPane.YES_NO_OPTION);
             if(respuesta==JOptionPane.YES_OPTION){
-                if(model.update(recepcionista)>0){
-                    JOptionPane.showMessageDialog(null,"El recepcionista fue modificado");
-                }else{
-                    JOptionPane.showMessageDialog(null,"Error al modificar el recepcionista");
-
+                try {
+                    
+                    recepcionista = new Recepcionista();
+            
+                     recepcionista.setIdRecepcionista(Integer.parseInt(this.view.idRecepcionista.getText()));
+                     recepcionista.setNombres(view.NombreRecepcionista.getText());
+                     recepcionista.setFechaDeIngreso(view.fechaDeIngreso.getDate());
+                    
+                    if(model.update(recepcionista)){
+                        JOptionPane.showMessageDialog(null,"El recepcionista fue modificado");
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Error al modificar el recepcionista");
+                        
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControllerReceptionist.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -112,7 +123,7 @@ public class ControllerReceptionist implements ActionListener{
             for(int i = 0; i < filas; i++ ){
             modeloTable.removeRow(0);
         }
-            for(Recepcionista paciente : listaRecepcionista){
+            for(Recepcionista recepcionista : listaRecepcionista){
                 Object[] fila= {recepcionista.getIdRecepcionista(),recepcionista.getNombres(),recepcionista.getFechaDeIngreso()};
                 modeloTable.addRow(fila);
             }

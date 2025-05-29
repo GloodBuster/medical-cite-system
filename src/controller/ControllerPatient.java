@@ -106,11 +106,25 @@ public class ControllerPatient implements ActionListener {
          if(ae.getSource().equals(this.view.BT_Modificar)){
             int respuesta = JOptionPane.showConfirmDialog(null,"Estas seguro de modificar?","Confirmar",JOptionPane.YES_NO_OPTION);
             if(respuesta==JOptionPane.YES_OPTION){
-                if(model.update(paciente)>0){
-                    JOptionPane.showMessageDialog(null,"El paciente fue modificado");
-                }else{
-                    JOptionPane.showMessageDialog(null,"Error al modificar el paciente");
+                
+                try {
+                   
+            
+            paciente.setIdPaciente(Integer.parseInt(this.view.idPaciente1.getText()));
+            paciente.setNombres(view.Nombre.getText());
+            paciente.setApellidos(view.pApellido.getText()+" "+view.sApellido1.getText());
+            paciente.setFechaNacimiento(view.fechaDeNacimiento.getDate());
+            paciente.setTelefono(Integer.parseInt(this.view.telefono.getText()));
+            paciente.setDireccion(view.direccion.getText());
+            paciente.setEmail(view.correo.getText()+"@"+view.com.getText());
+                    if(model.update(paciente)){
+                        JOptionPane.showMessageDialog(null,"El paciente fue modificado");
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Error al modificar el paciente");
 
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControllerPatient.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
