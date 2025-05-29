@@ -21,6 +21,10 @@ public class Recepcionista implements Serializable{
         this.nombres = nombres;
         this.fechaDeIngreso = fechaDeIngreso;
     }
+    
+    public Recepcionista(){
+        
+    }
 
     public int getIdRecepcionista() {
         return idRecepcionista;
