@@ -161,5 +161,59 @@ public class CitaDao {
             Conexion.cerrarConexion();
         }
         return listaCitas;
+        
+    }
+    public List<CitaDto> consultarfechaesp (int idMedico, java.util.Date fechaesp) throws SQLException {
+    List<CitaDto> listaCitas = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM cita where idMedico=? and fechaCita=? ;";
+            conectar = Conexion.conectar();
+            
+            PreparedStatement statement = (PreparedStatement) conectar.prepareStatement(sql);
+            statement.setInt(1, idMedico);
+            statement.setDate(2, new Date(fechaesp.getTime()));
+            
+            ResultSet resultSet = statement.executeQuery();
+            
+            while(resultSet.next()) {
+                CitaDto cita = new CitaDto(resultSet.getInt("idCita"), resultSet.getDate("fechaCita"), resultSet.getTime("horaCita"),
+                resultSet.getString("estadoCita"), resultSet.getString("motivoConsulta"), resultSet.getDate("fechaAsignacion"),
+                resultSet.getInt("idPaciente"), resultSet.getInt("idMedico"), resultSet.getInt("idRecepcionista"));
+                listaCitas.add(cita);
+            }
+            statement.close();
+        } catch(Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            Conexion.cerrarConexion();
+        }
+        return listaCitas;
+    }
+    public List<CitaDto> consultarporrango (int idMedico, java.util.Date fechainicio , java.util.Date fechafinal) throws SQLException {
+    List<CitaDto> listaCitas = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM cita where idMedico=? and fechaCita between ? and ? ;";
+            conectar = Conexion.conectar();
+            
+            PreparedStatement statement = (PreparedStatement) conectar.prepareStatement(sql);
+            statement.setInt(1, idMedico);
+            statement.setDate(2, new Date(fechainicio.getTime()));
+            statement.setDate(3, new Date(fechafinal.getTime()));
+            
+            ResultSet resultSet = statement.executeQuery();
+            
+            while(resultSet.next()) {
+                CitaDto cita = new CitaDto(resultSet.getInt("idCita"), resultSet.getDate("fechaCita"), resultSet.getTime("horaCita"),
+                resultSet.getString("estadoCita"), resultSet.getString("motivoConsulta"), resultSet.getDate("fechaAsignacion"),
+                resultSet.getInt("idPaciente"), resultSet.getInt("idMedico"), resultSet.getInt("idRecepcionista"));
+                listaCitas.add(cita);
+            }
+            statement.close();
+        } catch(Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            Conexion.cerrarConexion();
+        }
+        return listaCitas;
     }
 } 
