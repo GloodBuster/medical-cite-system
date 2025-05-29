@@ -83,9 +83,9 @@ public class RecepcionistaDao {
             coneccion = Conexion.conectar();
             PreparedStatement statement = (PreparedStatement) coneccion.prepareStatement(sql);
             
-             statement.setString(1, recepcionista.getNombres());
-           statement.setDate(2, new Date( recepcionista.getFechaDeIngreso().getTime()));
-           statement.setInt(3, recepcionista.getIdRecepcionista());
+             statement.setString(1, Recepcionista.getNombres());
+           statement.setDate(2, new Date( Recepcionista.getFechaDeIngreso().getTime()));
+           statement.setInt(3, Recepcionista.getIdRecepcionista());
             
             rowUpdate = statement.executeUpdate() > 0;
             statement.close();
