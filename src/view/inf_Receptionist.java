@@ -197,6 +197,7 @@ public class inf_Receptionist extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Bt_Guardar_InfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Guardar_InfActionPerformed
