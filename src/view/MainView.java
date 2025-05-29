@@ -43,6 +43,7 @@ public class MainView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO");
+        setLocation(new java.awt.Point(0, 0));
 
         OP_Datos.setText("Datos");
 
@@ -142,7 +143,8 @@ public class MainView extends javax.swing.JFrame {
             .addGap(0, 196, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 570, 228);
+        setSize(new java.awt.Dimension(570, 228));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void OP_MedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OP_MedicoActionPerformed

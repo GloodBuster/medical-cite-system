@@ -139,6 +139,7 @@ public class Agenda_Medico extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BT_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_guardarActionPerformed
