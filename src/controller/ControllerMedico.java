@@ -32,6 +32,7 @@ public class ControllerMedico implements ActionListener {
     
     public ControllerMedico(inf_Medico view) {
         this.view = view;
+        this.view.setTitle("Medico");
         this.medicoDao = new MedicoDaoAux();
         this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         

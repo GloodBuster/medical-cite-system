@@ -33,6 +33,7 @@ public class ControllerReceptionist implements ActionListener{
     
     public ControllerReceptionist(inf_Receptionist view){
         this.view = view;
+        this.view.setTitle("Recepcionista");
         this.view.setVisible(true);
         
         this.model = new RecepcionistaDao();

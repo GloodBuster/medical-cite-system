@@ -48,6 +48,7 @@ public class ControllerCite implements ActionListener {
     
     public ControllerCite(CiteView view){
         this.view = view;
+        this.view.setTitle("Cita");
         this.medicoDao = new MedicoDaoAux();
         this.pacienteDao = new PacienteDaoAux();
         this.recepcionistaDao = new RecepcionistaDaoAux();

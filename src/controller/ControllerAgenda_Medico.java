@@ -34,6 +34,7 @@ public class ControllerAgenda_Medico implements ActionListener {
     
     public ControllerAgenda_Medico(Agenda_Medico view, int idMedico) {
         this.view = view;
+        this.view.setTitle("Agenda");
         this.agendaDao = new AgendaDaoAux();
         this.medicoDao = new MedicoDaoAux();
         this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");

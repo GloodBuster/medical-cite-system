@@ -18,6 +18,7 @@ public class Controllerinfmedicofechaesp implements ActionListener {
     
     public Controllerinfmedicofechaesp(infmedicofechaesp view){
         this.view = view;
+        this.view.setTitle("Medico y fecha especifica");
         this.view.infmedfechbutOk.addActionListener(this);
         this.view.setVisible(true);
     

@@ -18,6 +18,7 @@ public class Medical_cite_system {
      */
     public static void main(String[] args) {
         MainView mainView = new MainView();
+        mainView.setTitle("Pantalla principal");
         MainController _ = new MainController(mainView);
         
     }

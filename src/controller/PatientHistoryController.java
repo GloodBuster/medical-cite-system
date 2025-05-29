@@ -24,6 +24,7 @@ public class PatientHistoryController implements ActionListener {
     
     public PatientHistoryController(PatientHistoryView view){
         this.view = view;
+        this.view.setTitle("Historial de un paciente");
         this.citaDao = new CitaDao();
         this.pacienteDao = new PacienteDaoAux();
         this.view.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

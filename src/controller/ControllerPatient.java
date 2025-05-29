@@ -33,6 +33,7 @@ public class ControllerPatient implements ActionListener {
     
     public ControllerPatient(inf_Patient view){
         this.view = view;
+        this.view.setTitle("Paciente");
         this.view.setVisible(true);
         
         this.model = new PacienteDao();

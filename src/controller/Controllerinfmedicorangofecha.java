@@ -22,6 +22,7 @@ public class Controllerinfmedicorangofecha implements ActionListener {
      */
     public Controllerinfmedicorangofecha(Infmedicorangofecha view){
         this.view = view;
+        this.view.setTitle("Por medico y rango de fechas");
         this.view.infmedbutOk.addActionListener(this);
         this.view.setVisible(true);
     

@@ -19,6 +19,7 @@ public class AllCitesController implements ActionListener {
     
     public AllCitesController(AllCitesView view){
         this.view = view;
+        this.view.setTitle("Todas las citas");
         this.citaDao = new CitaDao();
         this.view.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.view.setVisible(true);
