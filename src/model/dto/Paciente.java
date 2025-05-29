@@ -20,13 +20,6 @@ public class Paciente implements Serializable{
     private String direccion;
     private String email;
 
-    
-    
-    
-    public Paciente(int idPaciente, String nombres, String apellidos, Date fechaNacimiento, int telefono, String direccion, String email) {
-        this(idPaciente, nombres, apellidos, fechaNacimiento, telefono, direccion, email);
-    }
-
     public Paciente(int idPaciente, String nombres, String apellidos, Date fechaNacimiento, int telefono, String direccion, String email) {
         this.idPaciente = idPaciente;
         this.nombres = nombres;
@@ -36,10 +29,6 @@ public class Paciente implements Serializable{
         this.direccion = direccion;
         this.email = email;
     }
-
-   
-
-    
 
     public int getIdPaciente() {
         return idPaciente;

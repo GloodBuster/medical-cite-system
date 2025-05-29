@@ -10,7 +10,7 @@ import model.dao.PacienteDaoAux;
 import model.dao.RecepcionistaDaoAux;
 import model.dao.AgendaDaoAux;
 import model.dao.CitaDao;
-import model.dto.MedicoDtoAux;
+import model.dto.Medico;
 import model.dto.PacienteDtoAux;
 import model.dto.RecepcionistaDtoAux;
 import model.dto.AgendaDtoAux;
@@ -42,7 +42,7 @@ public class ControllerCite implements ActionListener {
     private DefaultTableModel tableModel;
     
     // Variables para mantener el registro de personas comprobadas
-    private MedicoDtoAux medicoComprobado;
+    private Medico medicoComprobado;
     private PacienteDtoAux pacienteComprobado;
     private RecepcionistaDtoAux recepcionistaComprobado;
     
@@ -136,10 +136,10 @@ public class ControllerCite implements ActionListener {
             //Comprobar doctor
             if(ae.getSource().equals(this.view.checkDoctor)){
                 int idMedico = Integer.parseInt(this.view.idMedicoField.getText());
-                MedicoDtoAux medico = medicoDao.read(idMedico);
+                Medico medico = medicoDao.read(idMedico);
                 
                 if(medico != null) {
-                    agendasActuales = agendaDao.listarAgendasPorMedico(idMedico);
+                    agendasActuales = agendaDao.listarAgendasFuturasPorMedico(idMedico);
                     DefaultComboBoxModel<String> fechasModel = new DefaultComboBoxModel<>();
                     
                     for(AgendaDtoAux agenda : agendasActuales) {
@@ -224,7 +224,7 @@ public class ControllerCite implements ActionListener {
                     this.view.stateField.setSelectedItem(cita.getEstadoCita());
                     
                     // Actualizar fechas y horas disponibles
-                    agendasActuales = agendaDao.listarAgendasPorMedico(cita.getIdMedico());
+                    agendasActuales = agendaDao.listarAgendasFuturasPorMedico(cita.getIdMedico());
                     DefaultComboBoxModel<String> fechasModel = new DefaultComboBoxModel<>();
                     
                     for(AgendaDtoAux agenda : agendasActuales) {
@@ -237,7 +237,7 @@ public class ControllerCite implements ActionListener {
                     this.view.hourField.setSelectedItem(String.format("%02d:00", cita.getHoraCita().toLocalTime().getHour()));
                     
                     // Comprobar y asignar todas las personas involucradas
-                    MedicoDtoAux medico = medicoDao.read(cita.getIdMedico());
+                    Medico medico = medicoDao.read(cita.getIdMedico());
                     PacienteDtoAux paciente = pacienteDao.read(cita.getIdPaciente());
                     RecepcionistaDtoAux recepcionista = recepcionistaDao.read(cita.getIdRecepcionista());
                     

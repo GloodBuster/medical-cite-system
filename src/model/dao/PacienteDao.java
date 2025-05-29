@@ -48,22 +48,5 @@ public class PacienteDao {
            JOptionPane.showMessageDialog(null,e);
            return 0;
        }
-   } 
-
-    public Paciente read(int IdPaciente){
-        try{
-            coneccion = Conexion.conectar();
-            PreparedStatement ps = coneccion.prepareStatement("SELECT * FROM Paciente WHERE idPaciente =?");
-            ps.setInt(1, IdPaciente);
-            
-            ResultSet resultado = ps.executeQuery();
-            Paciente = new Paciente();
-            
-            
-        }catch{
-            
-        }
-    }
-   
-   
+   }    
 }

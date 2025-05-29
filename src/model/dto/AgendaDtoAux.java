@@ -9,7 +9,6 @@ import java.sql.Time;
  * @author josev
  */
 public class AgendaDtoAux implements Serializable {
-    private int idAgenda;
     private int idMedico;
     private Date fecha;
     private Time horaInicio;
@@ -17,26 +16,16 @@ public class AgendaDtoAux implements Serializable {
     
     /**
      * Constructor con todos los parámetros
-     * @param idAgenda
      * @param idMedico
      * @param fecha
      * @param horaInicio
      * @param horaFinal
      */
-    public AgendaDtoAux(int idAgenda, int idMedico, Date fecha, Time horaInicio, Time horaFinal) {
-        this.idAgenda = idAgenda;
+    public AgendaDtoAux(int idMedico, Date fecha, Time horaInicio, Time horaFinal) {
         this.idMedico = idMedico;
         this.fecha = fecha;
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
-    }
-
-    public int getIdAgenda() {
-        return idAgenda;
-    }
-
-    public void setIdAgenda(int idAgenda) {
-        this.idAgenda = idAgenda;
     }
 
     public int getIdMedico() {
