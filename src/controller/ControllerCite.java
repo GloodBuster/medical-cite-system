@@ -198,7 +198,7 @@ public class ControllerCite implements ActionListener {
                     // Actualizar tabla y guardar recepcionista comprobado
                     tableModel.setValueAt(recepcionista.getIdRecepcionista(), 0, 0);
                     tableModel.setValueAt(recepcionista.getNombres(), 0, 1);
-                    tableModel.setValueAt("", 0, 2); // Los recepcionistas no tienen apellidos
+                    tableModel.setValueAt("", 0, 2);
                     recepcionistaComprobado = recepcionista;
                     
                     JOptionPane.showMessageDialog(null, "Recepcionista encontrado");

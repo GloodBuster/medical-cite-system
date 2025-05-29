@@ -13,14 +13,7 @@ public class AgendaDtoAux implements Serializable {
     private Date fecha;
     private Time horaInicio;
     private Time horaFinal;
-    
-    /**
-     * Constructor con todos los parámetros
-     * @param idMedico
-     * @param fecha
-     * @param horaInicio
-     * @param horaFinal
-     */
+
     public AgendaDtoAux(int idMedico, Date fecha, Time horaInicio, Time horaFinal) {
         this.idMedico = idMedico;
         this.fecha = fecha;

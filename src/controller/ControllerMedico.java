@@ -61,7 +61,10 @@ public class ControllerMedico implements ActionListener {
                     medico.getIdMedico(),
                     medico.getNombres(),
                     medico.getApellidos(),
-                    medico.getEspecialidad()
+                    medico.getEspecialidad(),
+                    medico.getTelefono(),
+                    medico.getDireccion(),
+                    medico.getEmail()
                 };
                 tableModel.addRow(fila);
             }
@@ -76,6 +79,8 @@ public class ControllerMedico implements ActionListener {
             view.pApellido_Medico.getText().trim().isEmpty() ||
             view.sApellido_Medico.getText().trim().isEmpty() ||
             view.telefono.getText().trim().isEmpty() ||
+            view.direccion_medico.getText().trim().isEmpty() ||
+            view.email_medico.getText().trim().isEmpty() ||
             view.especialidad.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios");
             return false;
@@ -90,8 +95,8 @@ public class ControllerMedico implements ActionListener {
             view.pApellido_Medico.getText() + " " + view.sApellido_Medico.getText(),
             dateFormat.parse("1990-01-01"), // Fecha de nacimiento por defecto
             Integer.parseInt(view.telefono.getText()),
-            "", // Dirección por defecto
-            "", // Email por defecto
+            view.direccion_medico.getText(),
+            view.email_medico.getText(),
             new Date(), // Fecha de ingreso actual
             view.especialidad.getSelectedItem().toString()
         );
@@ -150,6 +155,8 @@ public class ControllerMedico implements ActionListener {
                     view.pApellido_Medico.setText(primerApellido);
                     view.sApellido_Medico.setText(segundoApellido);
                     view.telefono.setText(String.valueOf(medico.getTelefono()));
+                    view.direccion_medico.setText(medico.getDireccion());
+                    view.email_medico.setText(medico.getEmail());
                     view.especialidad.setSelectedItem(medico.getEspecialidad());
                     
                     JOptionPane.showMessageDialog(null, "Médico encontrado");
@@ -190,6 +197,8 @@ public class ControllerMedico implements ActionListener {
         view.pApellido_Medico.setText("");
         view.sApellido_Medico.setText("");
         view.telefono.setText("");
+        view.direccion_medico.setText("");
+        view.email_medico.setText("");
         view.especialidad.setSelectedIndex(0);
     }
 }

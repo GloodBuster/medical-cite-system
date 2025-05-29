@@ -15,17 +15,7 @@ public class PacienteDtoAux implements Serializable {
     private int telefono;
     private String direccion;
     private String email;
-    
-    /**
-     * Constructor con todos los parámetros
-     * @param idPaciente
-     * @param nombres
-     * @param apellidos
-     * @param fechaNacimiento
-     * @param telefono
-     * @param direccion
-     * @param email
-     */
+
     public PacienteDtoAux(int idPaciente, String nombres, String apellidos, Date fechaNacimiento, 
                          int telefono, String direccion, String email) {
         this.idPaciente = idPaciente;
